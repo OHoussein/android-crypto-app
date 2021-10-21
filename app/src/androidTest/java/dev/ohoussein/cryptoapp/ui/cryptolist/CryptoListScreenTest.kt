@@ -18,7 +18,7 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import dev.ohoussein.cryptoapp.R
 import dev.ohoussein.cryptoapp.di.CoreModule
-import dev.ohoussein.cryptoapp.di.DataRepoModule
+import dev.ohoussein.cryptoapp.data.di.DataRepoModule
 import dev.ohoussein.cryptoapp.domain.model.DomainCrypto
 import dev.ohoussein.cryptoapp.domain.repo.ICryptoRepository
 import dev.ohoussein.cryptoapp.mock.TestDataFactory

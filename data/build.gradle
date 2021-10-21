@@ -79,6 +79,10 @@ dependencies {
     implementation Libs.roomRuntime
     kapt Libs.roomCompiler
 
+    implementation Libs.hiltAndroid
+    kapt Libs.hiltCompiler
+    kapt Libs.hiltAndroidCompiler
+
     implementation project(path: ':commonTest')
     testImplementation TestLibs.junit
     testImplementation TestLibs.coroutinesTest

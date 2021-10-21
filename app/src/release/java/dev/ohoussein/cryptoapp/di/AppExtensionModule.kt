@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import dev.ohoussein.cryptoapp.common.di.DIConstants
 import dev.ohoussein.cryptoapp.config.IAppFlavorSetup
 import dev.ohoussein.cryptoapp.config.ReleaseAppSetup
 import okhttp3.Interceptor

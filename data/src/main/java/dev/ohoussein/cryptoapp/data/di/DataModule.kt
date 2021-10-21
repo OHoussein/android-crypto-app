@@ -1,4 +1,4 @@
-package dev.ohoussein.cryptoapp.di
+package dev.ohoussein.cryptoapp.data.di
 
 import android.content.Context
 import dagger.Module
@@ -6,6 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dev.ohoussein.cryptoapp.common.di.DIConstants
 import dev.ohoussein.cryptoapp.data.database.CryptoDatabase
 import dev.ohoussein.cryptoapp.data.mapper.DomainModelMapper
 import dev.ohoussein.cryptoapp.data.network.ApiCoinGeckoService
@@ -14,7 +15,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Converter
 import retrofit2.Retrofit
-import java.util.Locale
+import java.util.*
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -28,12 +29,11 @@ object DataModule {
     @Provides
     @Singleton
     fun provideOkHttp(
-        @Named(DIConstants.Qualifier.HTTP_INTERCEPTOR) httpInterceptor: Array<Interceptor>,
-        @Named(DIConstants.Qualifier.HTTP_NETWORK_INTERCEPTOR) httpNetworkInterceptor: Array<Interceptor>,
+            @Named(DIConstants.Qualifier.HTTP_INTERCEPTOR) httpInterceptor: Array<Interceptor>,
+            @Named(DIConstants.Qualifier.HTTP_NETWORK_INTERCEPTOR) httpNetworkInterceptor: Array<Interceptor>,
     ): OkHttpClient = NetworkBuilder.createOkHttp(httpInterceptor, httpNetworkInterceptor)
 
     @Provides
-    @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient, converterFactory: Converter.Factory): Retrofit =
         NetworkBuilder.createRetrofit(
             okHttpClient = okHttpClient,

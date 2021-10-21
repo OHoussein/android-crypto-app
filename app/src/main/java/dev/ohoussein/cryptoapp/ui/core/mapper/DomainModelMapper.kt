@@ -1,16 +1,12 @@
 package dev.ohoussein.cryptoapp.ui.core.mapper
 
-import dev.ohoussein.cryptoapp.di.DIConstants.Qualifier.PERCENT_FORMATTER
-import dev.ohoussein.cryptoapp.di.DIConstants.Qualifier.PRICE_FORMATTER
+import dev.ohoussein.cryptoapp.common.di.DIConstants.Qualifier.PERCENT_FORMATTER
+import dev.ohoussein.cryptoapp.common.di.DIConstants.Qualifier.PRICE_FORMATTER
 import dev.ohoussein.cryptoapp.domain.model.DomainCrypto
 import dev.ohoussein.cryptoapp.domain.model.DomainCryptoDetails
-import dev.ohoussein.cryptoapp.ui.core.model.BaseCrypto
-import dev.ohoussein.cryptoapp.ui.core.model.Crypto
-import dev.ohoussein.cryptoapp.ui.core.model.CryptoDetails
-import dev.ohoussein.cryptoapp.ui.core.model.CryptoPrice
-import dev.ohoussein.cryptoapp.ui.core.model.LabelValue
+import dev.ohoussein.cryptoapp.ui.core.model.*
 import java.text.NumberFormat
-import java.util.Currency
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton

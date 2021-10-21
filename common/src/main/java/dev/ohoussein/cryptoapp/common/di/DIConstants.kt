@@ -1,4 +1,4 @@
-package dev.ohoussein.cryptoapp.di
+package dev.ohoussein.cryptoapp.common.di
 
 object DIConstants {
     object Qualifier {
