@@ -25,7 +25,7 @@ import org.junit.Test
 import org.junit.rules.TestRule
 import org.mockito.Mockito.times
 import java.io.IOException
-import java.util.Locale
+import java.util.*
 
 @ExperimentalCoroutinesApi
 class CryptoDetailsModelTest {

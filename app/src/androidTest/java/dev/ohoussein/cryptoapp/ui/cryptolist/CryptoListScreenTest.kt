@@ -1,15 +1,9 @@
 package dev.ohoussein.cryptoapp.ui.cryptolist
 
 import android.content.res.Resources
-import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performGesture
-import androidx.compose.ui.test.swipeDown
-import androidx.compose.ui.test.swipeUp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
@@ -17,8 +11,8 @@ import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import dev.ohoussein.cryptoapp.R
-import dev.ohoussein.cryptoapp.di.CoreModule
 import dev.ohoussein.cryptoapp.data.di.DataRepoModule
+import dev.ohoussein.cryptoapp.di.CoreModule
 import dev.ohoussein.cryptoapp.domain.model.DomainCrypto
 import dev.ohoussein.cryptoapp.domain.repo.ICryptoRepository
 import dev.ohoussein.cryptoapp.mock.TestDataFactory

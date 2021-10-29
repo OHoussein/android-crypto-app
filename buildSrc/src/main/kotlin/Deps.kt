@@ -8,7 +8,7 @@ object AppVersion {
 
 object BuildPlugins {
     object Versions {
-        const val androidGradlePlugin = "7.1.0-alpha03"
+        const val androidGradlePlugin = "7.1.0-beta02"
         const val kotlinVersion = "1.5.31"
         const val daggerHiltVersion = "2.38.1"
     }

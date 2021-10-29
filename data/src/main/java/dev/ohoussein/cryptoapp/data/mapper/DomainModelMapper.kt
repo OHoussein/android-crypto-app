@@ -5,7 +5,7 @@ import dev.ohoussein.cryptoapp.data.model.CryptoDetailsResponse
 import dev.ohoussein.cryptoapp.data.model.TopCryptoResponse
 import dev.ohoussein.cryptoapp.domain.model.DomainCrypto
 import dev.ohoussein.cryptoapp.domain.model.DomainCryptoDetails
-import java.util.Locale
+import java.util.*
 
 class DomainModelMapper(private val locale: Locale) {
 
