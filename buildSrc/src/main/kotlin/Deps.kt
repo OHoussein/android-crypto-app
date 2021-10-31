@@ -11,6 +11,7 @@ object BuildPlugins {
         const val androidGradlePlugin = "7.1.0-beta02"
         const val kotlinVersion = "1.5.31"
         const val daggerHiltVersion = "2.38.1"
+        const val sqlDelight = "1.5.2"
     }
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
@@ -21,6 +22,7 @@ object BuildPlugins {
     const val gradleVersionsTrackerPlugin = "com.github.ben-manes:gradle-versions-plugin:+"
     const val testLoggerPlugin = "com.adarshr:gradle-test-logger-plugin:2.1.1"
     const val detektPlugin = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.17.1"
+    const val sqlDelight = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
 }
 
 object AndroidSdk {
@@ -42,10 +44,12 @@ object Libs {
 
         const val androidXTest = "1.4.0"
         const val androidJUnit = "1.1.3"
-        const val espresso = "3.4.0"
+        const val espresso = "3.3.0"
         const val mockito = "2.2.0"
 
         const val compose = "1.0.4"
+
+        const val ktor = "1.6.4"
     }
 
     const val kotlinStdlib =
@@ -92,6 +96,17 @@ object Libs {
     const val room = "androidx.room:room-ktx:${Versions.room}"
     const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+
+    const val ktorCore = "io.ktor:ktor-client-core:${Versions.ktor}"
+    const val ktorAndroid = "io.ktor:ktor-client-android:${Versions.ktor}"
+    const val ktorIOS = "io.ktor:ktor-client-ios:${Versions.ktor}"
+    const val ktorSerialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
+    const val ktorLogging = "io.ktor:ktor-client-logging:${Versions.ktor}"
+    const val napier = "io.github.aakira:napier:2.1.0"
+    const val sqlDelightRuntime = "com.squareup.sqldelight:runtime:${BuildPlugins.Versions.sqlDelight}"
+    const val sqlDelightCoroutine = "com.squareup.sqldelight:coroutines-extensions:${BuildPlugins.Versions.sqlDelight}"
+    const val sqlDelightAndroid = "com.squareup.sqldelight:android-driver:${BuildPlugins.Versions.sqlDelight}"
+    const val sqlDelightIOS = "com.squareup.sqldelight:native-driver:${BuildPlugins.Versions.sqlDelight}"
 }
 
 object DebugLibs {

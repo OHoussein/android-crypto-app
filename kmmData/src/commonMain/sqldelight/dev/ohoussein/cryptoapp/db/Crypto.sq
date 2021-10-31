@@ -1,0 +1,16 @@
+CREATE TABLE Crypto (
+    id TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    imageUrl TEXT NOT NULL,
+    price REAL NOT NULL,
+    symbol TEXT NOT NULL,
+    priceChangePercentIn24h REAL,
+    orderInList INTEGER NOT NULL
+);
+
+insertItem:
+INSERT OR REPLACE INTO Crypto(id, name, imageUrl, price, symbol, priceChangePercentIn24h, orderInList)
+VALUES (?,?,?,?, ?, ?, ?);
+
+selectAll:
+SELECT * FROM Crypto ORDER BY orderInList;
