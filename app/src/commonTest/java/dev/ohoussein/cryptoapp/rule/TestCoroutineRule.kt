@@ -1,4 +1,4 @@
-package dev.ohoussein.cryptoapp.commonTest.rule
+package dev.ohoussein.cryptoapp.rule
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
