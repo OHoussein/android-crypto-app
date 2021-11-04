@@ -1,5 +1,5 @@
 include ':app'
 include ':commonTest'
 include ':domain'
-include ':kmmdata'
+include ':data'
 include ':common'
