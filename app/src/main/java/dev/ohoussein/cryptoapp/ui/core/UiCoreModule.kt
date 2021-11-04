@@ -4,8 +4,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.ohoussein.cryptoapp.common.di.DIConstants.Qualifier.PERCENT_FORMATTER
-import dev.ohoussein.cryptoapp.common.di.DIConstants.Qualifier.PRICE_FORMATTER
+import dev.ohoussein.cryptoapp.di.DIConstants.Qualifier.PERCENT_FORMATTER
+import dev.ohoussein.cryptoapp.di.DIConstants.Qualifier.PRICE_FORMATTER
 import java.text.NumberFormat
 import java.util.*
 import javax.inject.Named
