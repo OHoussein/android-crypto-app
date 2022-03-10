@@ -11,11 +11,11 @@ import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import dev.ohoussein.cryptoapp.R
-import dev.ohoussein.cryptoapp.data.di.DataRepoModule
+import dev.ohoussein.cryptoapp.commonTest.mock.TestDataFactory
 import dev.ohoussein.cryptoapp.di.CoreModule
+import dev.ohoussein.cryptoapp.di.DataRepoModule
 import dev.ohoussein.cryptoapp.domain.model.DomainCrypto
 import dev.ohoussein.cryptoapp.domain.repo.ICryptoRepository
-import dev.ohoussein.cryptoapp.mock.TestDataFactory
 import dev.ohoussein.cryptoapp.ui.activity.RootActivity
 import dev.ohoussein.cryptoapp.ui.feature.cryptolist.components.CryptoItemTestTag
 import dev.ohoussein.cryptoapp.ui.feature.cryptolist.components.CryptoListScreen
