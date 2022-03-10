@@ -27,7 +27,7 @@ class CryptoApi(
         }
     }
 
-    suspend fun getCryptoDetails(cryptoId: String): CryptoDetailsResponse = httpClient.get() {
+    suspend fun getCryptoDetails(cryptoId: String): CryptoDetailsResponse = httpClient.get {
         url {
             protocol = URLProtocol.HTTPS
             host = baseUrl

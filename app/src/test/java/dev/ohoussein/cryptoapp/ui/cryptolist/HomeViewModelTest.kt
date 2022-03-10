@@ -16,7 +16,7 @@ import dev.ohoussein.cryptoapp.ui.core.model.Crypto
 import dev.ohoussein.cryptoapp.ui.core.model.Resource
 import dev.ohoussein.cryptoapp.ui.feature.cryptolist.viewmodel.HomeViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -39,8 +39,8 @@ class HomeViewModelTest {
     private lateinit var useCase: GetTopCryptoList
 
     private val uiMapper = DomainModelMapper(
-        UiCoreModule.providePriceFormatter(Locale.US),
-        UiCoreModule.providePercentFormatter(),
+            UiCoreModule.providePriceFormatter(Locale.US),
+            UiCoreModule.providePercentFormatter(),
     )
 
     private lateinit var stateObserver: Observer<Resource<Unit>>
@@ -49,16 +49,16 @@ class HomeViewModelTest {
     fun setup() {
         useCase = mock()
         tested = HomeViewModel(
-            TestCoroutineContextProvider(),
-            useCase,
-            uiMapper,
+                TestCoroutineContextProvider(),
+                useCase,
+                uiMapper,
         )
         stateObserver = mock()
         tested.syncState.observeForever(stateObserver)
     }
 
     @Test
-    fun `should load top crypto list`() = runBlockingTest {
+    fun `should load top crypto list`() = runTest {
         //Given
         givenListOfCrypto {
             //When
@@ -70,25 +70,23 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `should get latest data when refreshing`() = runBlockingTest {
+    fun `should get latest data when refreshing`() = runTest {
         //Given
         givenListOfCrypto {
             //When
             tested.refresh()
             //Then
             verify(stateObserver).onChanged(Resource.success(Unit))
-            runBlockingTest {
-                givenListOfCrypto {
-                    tested.refresh(force = true)
-                    verify(stateObserver, atLeast(1)).onChanged(Resource.loading())
-                    verify(stateObserver, times(2)).onChanged(Resource.success(Unit))
-                }
+            givenListOfCrypto {
+                tested.refresh(force = true)
+                verify(stateObserver, atLeast(1)).onChanged(Resource.loading())
+                verify(stateObserver, times(2)).onChanged(Resource.success(Unit))
             }
         }
     }
 
     @Test
-    fun `should get error when loading crypto list`() = runBlockingTest {
+    fun `should get error when loading crypto list`() = runTest {
         //Given
         givenErrorListOfCrypto { error ->
             //When
@@ -100,7 +98,7 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `should refresh after error`() = runBlockingTest {
+    fun `should refresh after error`() = runTest {
         //Given
         givenErrorListOfCrypto { error ->
             //When
@@ -108,13 +106,11 @@ class HomeViewModelTest {
             //Then
             verify(stateObserver).onChanged(Resource.loading())
             verify(stateObserver).onChanged(Resource.error(error))
-            runBlockingTest {
-                givenListOfCrypto {
-                    tested.refresh(true)
-                    //Then
-                    verify(stateObserver, times(2)).onChanged(Resource.loading())
-                    verify(stateObserver, atLeast(1)).onChanged(Resource.success(Unit))
-                }
+            givenListOfCrypto {
+                tested.refresh(true)
+                //Then
+                verify(stateObserver, times(2)).onChanged(Resource.loading())
+                verify(stateObserver, atLeast(1)).onChanged(Resource.success(Unit))
             }
         }
     }
@@ -123,14 +119,14 @@ class HomeViewModelTest {
     // private methods
     ///////////////////////////////////////////////////////////////////////////
 
-    private suspend fun givenListOfCrypto(next: (List<Crypto>) -> Unit) {
+    private suspend fun givenListOfCrypto(next: suspend (List<Crypto>) -> Unit) {
         val data = TestDataFactory.makeCryptoList(10)
         val uiData = uiMapper.convert(data, "USD")
         whenever(useCase.refresh(any())).thenReturn(Unit)
         next(uiData)
     }
 
-    private suspend fun givenErrorListOfCrypto(next: (Throwable) -> Unit) {
+    private suspend fun givenErrorListOfCrypto(next: suspend (Throwable) -> Unit) {
         val error = IOException("")
         whenever(useCase.refresh(any())).thenAnswer { throw error }
         next(error)

@@ -27,7 +27,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -123,7 +122,7 @@ class CryptoListScreenTest {
     }
 
     private fun swipeToRefreshList() {
-        composeTestRule.onNodeWithTag(CryptoListTestTag).performGesture {
+        composeTestRule.onNodeWithTag(CryptoListTestTag).performTouchInput {
             swipeDown()
         }
     }
@@ -140,7 +139,7 @@ class CryptoListScreenTest {
         whenever(cryptoRepo.getTopCryptoList(any())).thenReturn(flow)
         runBlocking { whenever(cryptoRepo.refreshTopCryptoList(any())).thenAnswer { throw IOException() } }
         val retry: () -> Unit = {
-            runBlockingTest { flow.emit(TestDataFactory.makeCryptoList(20)) }
+            runBlocking { flow.emit(TestDataFactory.makeCryptoList(20)) }
         }
         next(retry)
     }
@@ -148,7 +147,7 @@ class CryptoListScreenTest {
     private fun thenCryptoListShouldBeDisplayed(data: List<DomainCrypto>) {
         data.forEach { item ->
             thenCryptoItemShouldBeDisplayed(item)
-            composeTestRule.onNodeWithTag(CryptoItemTestTag + item.id).performGesture {
+            composeTestRule.onNodeWithTag(CryptoItemTestTag + item.id).performTouchInput {
                 swipeUp()
             }
         }

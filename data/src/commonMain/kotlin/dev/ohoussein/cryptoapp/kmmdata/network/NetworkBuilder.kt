@@ -12,7 +12,7 @@ object NetworkBuilder {
 
     const val TAG = "HTTP Client"
 
-    fun client() = HttpClient() {
+    fun client() = HttpClient {
         install(Logging) {
             level = LogLevel.INFO
             logger = object : Logger {
