@@ -26,7 +26,7 @@ kotlin {
         framework {
             baseName = "domain"
         }
-        // set path to your ios project podfile, e.g. podfile = project.file("../iosApp/Podfile")
+        //podfile = project.file("../iosApp/Podfile")
     }
     
     sourceSets {
@@ -58,6 +58,12 @@ kotlin {
         }*/
         val iosMain by getting
        // val iosTest by getting
+    }
+
+    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+        binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
+            isStatic = false
+        }
     }
 }
 
