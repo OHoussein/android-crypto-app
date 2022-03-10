@@ -1,4 +1,4 @@
-package dev.ohoussein.cryptoapp.di
+package dev.ohoussein.cryptoapp.test.di
 
 import com.nhaarman.mockitokotlin2.mock
 import dagger.Module

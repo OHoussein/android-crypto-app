@@ -10,7 +10,7 @@ import dev.ohoussein.cryptoapp.commonTest.mock.TestDataFactory
 import dev.ohoussein.cryptoapp.core.TestCoroutineContextProvider
 import dev.ohoussein.cryptoapp.domain.model.DomainCryptoDetails
 import dev.ohoussein.cryptoapp.domain.usecase.GetCryptoDetails
-import dev.ohoussein.cryptoapp.rule.TestCoroutineRule
+import dev.ohoussein.cryptoapp.test.rule.TestCoroutineRule
 import dev.ohoussein.cryptoapp.ui.core.UiCoreModule
 import dev.ohoussein.cryptoapp.ui.core.mapper.DomainModelMapper
 import dev.ohoussein.cryptoapp.ui.core.model.CryptoDetails
@@ -28,7 +28,7 @@ import java.io.IOException
 import java.util.*
 
 @ExperimentalCoroutinesApi
-class CryptoDetailsModelTest {
+class CryptoDetailsViewModelTest {
 
     @get:Rule
     val rule: TestRule = InstantTaskExecutorRule()

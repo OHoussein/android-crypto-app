@@ -1,9 +1,9 @@
 package dev.ohoussein.cryptoapp.ui.core.mapper
 
-import dev.ohoussein.cryptoapp.di.DIConstants.Qualifier.PERCENT_FORMATTER
-import dev.ohoussein.cryptoapp.di.DIConstants.Qualifier.PRICE_FORMATTER
 import dev.ohoussein.cryptoapp.domain.model.DomainCrypto
 import dev.ohoussein.cryptoapp.domain.model.DomainCryptoDetails
+import dev.ohoussein.cryptoapp.test.di.DIConstants.Qualifier.PERCENT_FORMATTER
+import dev.ohoussein.cryptoapp.test.di.DIConstants.Qualifier.PRICE_FORMATTER
 import dev.ohoussein.cryptoapp.ui.core.model.*
 import java.text.NumberFormat
 import java.util.*

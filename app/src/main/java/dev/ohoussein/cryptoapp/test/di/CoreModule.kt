@@ -1,20 +1,19 @@
-package dev.ohoussein.cryptoapp.di
+package dev.ohoussein.cryptoapp.test.di
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dev.ohoussein.cryptoapp.common.coroutine.CoroutineContextProvider
-import dev.ohoussein.cryptoapp.core.TestCoroutineContextProvider
-import java.util.Locale
+import java.util.*
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object TestCoreModule {
+object CoreModule {
     @Provides
     @Singleton
-    fun provideCoroutineContextProvider(): CoroutineContextProvider = TestCoroutineContextProvider()
+    fun provideCoroutineContextProvider(): CoroutineContextProvider = CoroutineContextProvider()
 
     @Provides
     fun provideLocale(): Locale = Locale.US

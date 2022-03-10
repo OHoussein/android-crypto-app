@@ -1,4 +1,4 @@
-package dev.ohoussein.cryptoapp.di
+package dev.ohoussein.cryptoapp.test.di
 
 import dagger.Module
 import dagger.Provides

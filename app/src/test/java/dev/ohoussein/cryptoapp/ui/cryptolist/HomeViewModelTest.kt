@@ -9,7 +9,7 @@ import com.nhaarman.mockitokotlin2.whenever
 import dev.ohoussein.cryptoapp.commonTest.mock.TestDataFactory
 import dev.ohoussein.cryptoapp.core.TestCoroutineContextProvider
 import dev.ohoussein.cryptoapp.domain.usecase.GetTopCryptoList
-import dev.ohoussein.cryptoapp.rule.TestCoroutineRule
+import dev.ohoussein.cryptoapp.test.rule.TestCoroutineRule
 import dev.ohoussein.cryptoapp.ui.core.UiCoreModule
 import dev.ohoussein.cryptoapp.ui.core.mapper.DomainModelMapper
 import dev.ohoussein.cryptoapp.ui.core.model.Crypto
