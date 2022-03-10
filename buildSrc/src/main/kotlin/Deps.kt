@@ -8,9 +8,9 @@ object AppVersion {
 
 object BuildPlugins {
     object Versions {
-        const val androidGradlePlugin = "7.1.0-beta02"
-        const val kotlinVersion = "1.5.31"
-        const val daggerHiltVersion = "2.38.1"
+        const val androidGradlePlugin = "7.1.0"
+        const val kotlinVersion = "1.6.10"
+        const val daggerHiltVersion = "2.41"
         const val sqlDelight = "1.5.2"
     }
 
@@ -27,7 +27,7 @@ object BuildPlugins {
 
 object AndroidSdk {
     const val minSdk = 21
-    const val compileSdk = 30
+    const val compileSdk = 31
     const val targetSdk = compileSdk
 }
 
@@ -35,8 +35,8 @@ object Libs {
     object Versions {
         const val retrofit = "2.9.0"
         const val daggerHiltJetpack = "1.0.0"
-        const val lifecycle = "2.3.1"
-        const val coroutines = "1.5.1"
+        const val lifecycle = "2.4.1"
+        const val coroutines = "1.6.0"
         const val fragment = "1.3.5"
         const val room = "2.3.0"
 
@@ -44,17 +44,17 @@ object Libs {
 
         const val androidXTest = "1.4.0"
         const val androidJUnit = "1.1.3"
-        const val espresso = "3.3.0"
+        const val espresso = "3.4.0"
         const val mockito = "2.2.0"
 
-        const val compose = "1.0.4"
+        const val compose = "1.1.1"
 
         const val ktor = "1.6.4"
     }
 
     const val kotlinStdlib =
         "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${BuildPlugins.Versions.kotlinVersion}"
-    const val appcompat = "androidx.appcompat:appcompat:1.3.1"
+    const val appcompat = "androidx.appcompat:appcompat:1.4.1"
     const val material = "com.google.android.material:material:1.4.0"
     const val annotation = "androidx.annotation:annotation:1.2.0"
 
@@ -68,7 +68,7 @@ object Libs {
     const val hiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.daggerHiltJetpack}"
 
-    const val timber = "com.jakewharton.timber:timber:4.7.1"
+    const val timber = "com.jakewharton.timber:timber:5.0.1"
 
     const val lifecycle = "androidx.lifecycle:lifecycle-extensions:2.2.0"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
@@ -86,12 +86,12 @@ object Libs {
     const val composeMaterialIconExtended =
         "androidx.compose.material:material-icons-extended:${Versions.compose}"
     const val composeUITooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
-    const val composeActivity = "androidx.activity:activity-compose:1.3.0"
+    const val composeActivity = "androidx.activity:activity-compose:1.4.0"
     const val composeLivedata = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
-    const val composeHiltViewModel = "androidx.hilt:hilt-navigation-compose:1.0.0-alpha02"
-    const val composeNavigation = "androidx.navigation:navigation-compose:2.4.0-alpha05"
-    const val composeCoil = "io.coil-kt:coil-compose:1.3.0"
-    const val composeSwipeRefresh = "com.google.accompanist:accompanist-swiperefresh:0.15.0"
+    const val composeHiltViewModel = "androidx.hilt:hilt-navigation-compose:1.0.0"
+    const val composeNavigation = "androidx.navigation:navigation-compose:2.4.1"
+    const val composeCoil = "io.coil-kt:coil-compose:1.4.0"
+    const val composeSwipeRefresh = "com.google.accompanist:accompanist-swiperefresh:0.23.1"
 
     const val room = "androidx.room:room-ktx:${Versions.room}"
     const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
@@ -123,7 +123,7 @@ object TestLibs {
     const val hiltAndroidCompiler =
         "com.google.dagger:hilt-android-compiler:${BuildPlugins.Versions.daggerHiltVersion}"
     const val mockito = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Libs.Versions.mockito}"
-    const val mockitoInline = "org.mockito:mockito-inline:3.11.2"
+    const val mockitoInline = "org.mockito:mockito-inline:4.4.0"
     const val coroutinesTest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Libs.Versions.coroutines}"
     const val junit = "junit:junit:4.13.2"
@@ -141,7 +141,7 @@ object AndroidTestLibs {
     const val rules = "androidx.test:rules:1.4.0"
     const val espresso = "androidx.test.espresso:espresso-core:${Libs.Versions.espresso}"
     const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Libs.Versions.espresso}"
-    const val mockitoAndroid = "org.mockito:mockito-android:3.11.2"
+    const val mockitoAndroid = "org.mockito:mockito-android:4.4.0"
     const val okhttpIdling = "com.jakewharton.espresso:okhttp3-idling-resource:1.0.0"
 
     const val composeTesting = "androidx.compose.ui:ui-test-junit4:${Libs.Versions.compose}"

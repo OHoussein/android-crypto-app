@@ -5,8 +5,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import dev.ohoussein.cryptoapp.ui.core.mapper.ErrorMessageMapper
 import dev.ohoussein.cryptoapp.ui.core.util.ExternalNavigator
 import dev.ohoussein.cryptoapp.ui.feature.cryptolist.components.CryptoDetailsScreen

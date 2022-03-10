@@ -18,7 +18,7 @@ data class CryptoDetailsResponse(
         @SerialName("id") val id: String,
         @SerialName("symbol") val symbol: String,
         @SerialName("name") val name: String,
-        @SerialName("hashing_algorithm") val hashingAlgorithm: String,
+        @SerialName("hashing_algorithm") val hashingAlgorithm: String?,
         @SerialName("description") val description: Map<String, String>,
         @SerialName("sentiment_votes_up_percentage") val sentimentUpVotesPercentage: Double,
         @SerialName("sentiment_votes_down_percentage") val sentimentDownVotesPercentage: Double,
