@@ -111,7 +111,6 @@ dependencies {
     implementation Libs.coroutinesAndroid
     implementation Libs.timber
     implementation Libs.hiltAndroid
-    //implementation Libs.hiltLifecycle
 
     kapt Libs.hiltCompiler
     kapt Libs.hiltAndroidCompiler
@@ -135,16 +134,6 @@ dependencies {
     implementation Libs.composeCoil
     implementation Libs.composeSwipeRefresh
 
-    //Data
-    implementation Libs.retofit
-    implementation Libs.retofitConverter
-    implementation Libs.roomRuntime
-
-    //Debug tools
-    debugImplementation DebugLibs.stetho
-    debugImplementation DebugLibs.stethoOkhttp
-    debugImplementation DebugLibs.okhttpLogging
-
     //Android tests
     androidTestImplementation project(path: ':commonTest')
     androidTestImplementation TestLibs.hiltAndroid
@@ -152,14 +141,10 @@ dependencies {
     debugImplementation AndroidTestLibs.testCore
     androidTestImplementation AndroidTestLibs.testCoreKtx
     androidTestImplementation AndroidTestLibs.androidJUnit
-    androidTestImplementation AndroidTestLibs.androidJUnitKtx
     androidTestImplementation AndroidTestLibs.rules
-    androidTestImplementation AndroidTestLibs.espresso
-    androidTestImplementation AndroidTestLibs.espressoContrib
     androidTestImplementation TestLibs.mockito
     androidTestImplementation AndroidTestLibs.mockitoAndroid
     androidTestImplementation TestLibs.junit
-    androidTestImplementation TestLibs.archCoreTesting
     androidTestImplementation TestLibs.coroutinesTest
     androidTestImplementation AndroidTestLibs.composeTesting
     debugImplementation AndroidTestLibs.composeTestingManifest
